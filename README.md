@@ -1,4 +1,4 @@
-# live-filming-nyc
+# nyc-live-filming
 
 Track NYC locations with live filming of movies and TV shows.
 
