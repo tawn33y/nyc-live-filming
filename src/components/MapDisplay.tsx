@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { Loader, } from '@googlemaps/js-api-loader';
+import { Loader } from '@googlemaps/js-api-loader';
 import { FilmingEventsList } from './FilmingEventsList';
 import { FilmingEvent } from '../utils/getFilmingEvents';
 import './MapDisplay.css';
@@ -9,10 +9,10 @@ interface MapDisplayProps {
 }
 
 export const MapDisplay: FC<MapDisplayProps> = ({ filmingEvents }) => {
-  const mapRef = useRef<HTMLDivElement | undefined>();
-  const [map, setMap] = useState<window.google.maps.Map | undefined>(undefined);
+  const mapRef = useRef<HTMLDivElement | null>(null);
+  const [map, setMap] = useState<google.maps.Map | undefined>(undefined);
   const [selectedMarkerId, setSelectedMarkerId] = useState<number | undefined>();
-  const [infoWindows, setInfoWindows] = useState<window.google.maps.InfoWindow[]>([]);
+  const [infoWindows, setInfoWindows] = useState<google.maps.InfoWindow[]>([]);
 
   const closeAllInfoWindows = (): void => {
     infoWindows.forEach((selectedInfoWindow) => selectedInfoWindow?.close());
@@ -25,14 +25,14 @@ export const MapDisplay: FC<MapDisplayProps> = ({ filmingEvents }) => {
     });
 
     // create map
-    loader.importLibrary('maps').then(() => {
-      const bounds = new window.google.maps.LatLngBounds();
+    loader.load().then((google) => {
+      const bounds = new google.maps.LatLngBounds();
 
       filmingEvents.forEach((filmingEvent) => {
-        const latLng = new window.google.maps.LatLng(filmingEvent.lat, filmingEvent.lng);
+        const latLng = new google.maps.LatLng(filmingEvent.lat, filmingEvent.lng);
         bounds.extend(latLng);
       });
-      const map = new window.google.maps.Map(mapRef.current!, {
+      const map = new google.maps.Map(mapRef.current!, {
         center: bounds.getCenter(),
         zoom: 14,
       });
@@ -46,7 +46,7 @@ export const MapDisplay: FC<MapDisplayProps> = ({ filmingEvents }) => {
 
     closeAllInfoWindows();
 
-    let newInfoWindows: window.google.maps.InfoWindow[] = [];
+    let newInfoWindows: google.maps.InfoWindow[] = [];
     filmingEvents.forEach((filmingEvent, index) => {
       const marker = new window.google.maps.Marker({
         position: { lat: filmingEvent.lat, lng: filmingEvent.lng },
