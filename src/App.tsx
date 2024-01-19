@@ -14,13 +14,14 @@ export const App: FC = () => {
 
   return (
     <>
-      <h1>nyc live filming</h1>
+      <div className="nav">
+        <h1>nyc live filming</h1>
+        <p className="links">
+          <a href="https://colab.research.google.com/drive/1aMqf4AC9Nq9NCW0fl1J2XqOFloFpLCAe?usp=sharing" target="_blank" rel="noopener noreferrer">Colab Notebook</a>
+          <a href="https://github.com/tawn33y/nyc-live-filming" target="_blank" rel="noopener noreferrer">Github</a>
+        </p>
+      </div>
       <MapDisplay filmingEvents={filmingEvents} />
-
-      <p className="links">
-        <a href="https://colab.research.google.com/drive/1aMqf4AC9Nq9NCW0fl1J2XqOFloFpLCAe?usp=sharing" target="_blank" rel="noopener noreferrer">Colab Notebook</a>
-        <a href="https://github.com/tawn33y/nyc-live-filming" target="_blank" rel="noopener noreferrer">Github</a>
-      </p>
     </>
   );
 };

@@ -1,6 +1,14 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .links {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
+  font-size: 0.8rem;
 }
