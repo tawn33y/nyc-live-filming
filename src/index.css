@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem 8rem;
+}
+
+@media (max-width:768px)  {
+  body {
+    padding: 2rem 1rem;
+  }
+}

@@ -1,0 +1,43 @@
+.filming-events {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+
+.filming-events > div {
+  padding: 1rem;
+  border: 1px #ccc solid;
+  border-top: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+.filming-events > div:first-of-type {
+  border-radius: 1rem 1rem 0 0;
+  border-top: 1px #ccc solid;
+}
+
+.filming-events > div:last-of-type {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.filming-events > div:hover, .filming-events > div.active {
+  background: #ddd;
+  cursor: pointer;
+}
+
+/* .filming-events > div.active:hover {
+  background: white;
+} */
+
+.filming-events > div > h3 {
+  margin: 0 0 1rem 0;
+}
+
+.filming-events > div > p {
+  margin: 0.25rem 0 0 0;
+}
+
+.filming-events > div > p:last-of-type {
+  color: #667;
+}

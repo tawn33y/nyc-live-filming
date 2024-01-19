@@ -1,0 +1,11 @@
+.listings {
+  display: flex;
+  gap: 2rem;
+}
+
+.map-display {
+  height: 400px;
+  width: 100%;
+  border: 1px #ccc solid;
+  border-radius: 1rem;
+}
