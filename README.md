@@ -21,7 +21,7 @@ Colab Notebook: https://colab.research.google.com/drive/1aMqf4AC9Nq9NCW0fl1J2XqO
 
 ## Getting Started: Colab Notebook
 
-1. Copy csv from the [csv folder](./csv/NYC_Permitted_Event_Information_20240118.csv).
+1. Upload csv from the [csv folder](./csv/NYC_Permitted_Event_Information_20240118.csv).
 
 > You can also download a fresh csv here: https://data.cityofnewyork.us/City-Government/NYC-Permitted-Event-Information/tvpp-9vvx
 
