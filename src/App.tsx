@@ -13,7 +13,7 @@ export const App: FC = () => {
 
   return (
     <>
-      <h1>live filming nyc</h1>
+      <h1>nyc live filming</h1>
       <MapDisplay filmingEvents={filmingEvents} />
     </>
   );
