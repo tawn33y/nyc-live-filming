@@ -3,6 +3,14 @@
   gap: 2rem;
 }
 
+@media (max-width:768px) {
+  .listings {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .map-display {
   height: 400px;
   width: 100%;
